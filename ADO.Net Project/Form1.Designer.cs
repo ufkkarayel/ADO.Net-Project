@@ -39,12 +39,12 @@ namespace ADO.Net_Project
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtProcessValue = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.cmdCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rchDetail = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@ namespace ADO.Net_Project
             this.btnlistele.TabIndex = 0;
             this.btnlistele.Text = "Listele";
             this.btnlistele.UseVisualStyleBackColor = true;
+            this.btnlistele.Click += new System.EventHandler(this.btnlistele_Click);
             // 
             // btnekle
             // 
@@ -67,6 +68,7 @@ namespace ADO.Net_Project
             this.btnekle.TabIndex = 1;
             this.btnekle.Text = "Ekle";
             this.btnekle.UseVisualStyleBackColor = true;
+            this.btnekle.Click += new System.EventHandler(this.btnekle_Click);
             // 
             // btnsil
             // 
@@ -77,6 +79,7 @@ namespace ADO.Net_Project
             this.btnsil.TabIndex = 2;
             this.btnsil.Text = "Sil";
             this.btnsil.UseVisualStyleBackColor = true;
+            this.btnsil.Click += new System.EventHandler(this.btnsil_Click);
             // 
             // btnguncelle
             // 
@@ -146,34 +149,34 @@ namespace ADO.Net_Project
             this.label4.TabIndex = 9;
             this.label4.Text = "Fiyat: ";
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(435, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtTitle.Location = new System.Drawing.Point(435, 28);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(181, 20);
+            this.txtTitle.TabIndex = 10;
             // 
-            // textBox2
+            // txtProcessValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(435, 111);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 11;
+            this.txtProcessValue.Location = new System.Drawing.Point(435, 111);
+            this.txtProcessValue.Name = "txtProcessValue";
+            this.txtProcessValue.Size = new System.Drawing.Size(181, 20);
+            this.txtProcessValue.TabIndex = 11;
             // 
-            // textBox3
+            // txtPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(435, 157);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 12;
+            this.txtPrice.Location = new System.Drawing.Point(435, 157);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(181, 20);
+            this.txtPrice.TabIndex = 12;
             // 
-            // comboBox1
+            // cmdCategory
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(435, 74);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 13;
+            this.cmdCategory.FormattingEnabled = true;
+            this.cmdCategory.Location = new System.Drawing.Point(435, 74);
+            this.cmdCategory.Name = "cmdCategory";
+            this.cmdCategory.Size = new System.Drawing.Size(181, 21);
+            this.cmdCategory.TabIndex = 13;
             // 
             // label5
             // 
@@ -186,25 +189,25 @@ namespace ADO.Net_Project
             this.label5.Text = "Proje Detayları:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // richTextBox1
+            // rchDetail
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(645, 74);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(285, 226);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.rchDetail.Location = new System.Drawing.Point(645, 74);
+            this.rchDetail.Name = "rchDetail";
+            this.rchDetail.Size = new System.Drawing.Size(285, 226);
+            this.rchDetail.TabIndex = 15;
+            this.rchDetail.Text = "";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 748);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rchDetail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmdCategory);
+            this.Controls.Add(this.txtPrice);
+            this.Controls.Add(this.txtProcessValue);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -235,12 +238,12 @@ namespace ADO.Net_Project
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtProcessValue;
+        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ComboBox cmdCategory;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rchDetail;
     }
 }
 
