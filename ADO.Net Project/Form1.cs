@@ -72,5 +72,30 @@ namespace ADO.Net_Project
             connection.Close();
             MessageBox.Show("Proje bilgisi başarıyla güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
+
+        private void btngetir_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("Select * From Project Where Title=@p1", connection);
+            command.Parameters.AddWithValue("@p1",txtTitle.Text);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+            connection.Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("Select * From Category", connection);
+            cmdCategory.DisplayMember = "CategoryName";
+            cmdCategory.ValueMember = "CategoryID";
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            cmdCategory.DataSource = dt;
+            connection.Close();
+        }
     }
 }

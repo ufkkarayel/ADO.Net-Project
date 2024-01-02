@@ -103,6 +103,7 @@ namespace ADO.Net_Project
             this.btngetir.TabIndex = 4;
             this.btngetir.Text = "Getir";
             this.btngetir.UseVisualStyleBackColor = true;
+            this.btngetir.Click += new System.EventHandler(this.btngetir_Click);
             // 
             // dataGridView1
             // 
@@ -242,6 +243,7 @@ namespace ADO.Net_Project
             this.Controls.Add(this.btnlistele);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
