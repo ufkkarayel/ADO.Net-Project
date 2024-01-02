@@ -57,5 +57,20 @@ namespace ADO.Net_Project
             connection.Close();
             MessageBox.Show("Proje Başarıyla Silindi");
         }
+
+        private void btnguncelle_Click(object sender, EventArgs e)
+        {
+            connection.Open();
+            SqlCommand command = new SqlCommand("Update Project Set Title=@p1, Description=@p2, ProjectCategory=@p3, CompleteDay=@p4, Price=@p5 where ProjectID=@p6", connection);
+            command.Parameters.AddWithValue("@p1", txtTitle.Text);
+            command.Parameters.AddWithValue("@p2", rchDetail.Text);
+            command.Parameters.AddWithValue("@p3", cmdCategory.Text);
+            command.Parameters.AddWithValue("@p4", txtProcessValue.Text);
+            command.Parameters.AddWithValue("@p5", txtPrice.Text);
+            command.Parameters.AddWithValue("@p6", txtID.Text);
+            command.ExecuteNonQuery();
+            connection.Close();
+            MessageBox.Show("Proje bilgisi başarıyla güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
     }
 }

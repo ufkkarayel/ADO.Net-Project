@@ -45,6 +45,8 @@ namespace ADO.Net_Project
             this.cmdCategory = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.rchDetail = new System.Windows.Forms.RichTextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +92,7 @@ namespace ADO.Net_Project
             this.btnguncelle.TabIndex = 3;
             this.btnguncelle.Text = "Güncelle";
             this.btnguncelle.UseVisualStyleBackColor = true;
+            this.btnguncelle.Click += new System.EventHandler(this.btnguncelle_Click);
             // 
             // btngetir
             // 
@@ -197,11 +200,30 @@ namespace ADO.Net_Project
             this.rchDetail.TabIndex = 15;
             this.rchDetail.Text = "";
             // 
+            // txtID
+            // 
+            this.txtID.Location = new System.Drawing.Point(435, 194);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(181, 20);
+            this.txtID.TabIndex = 17;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblID.Location = new System.Drawing.Point(264, 193);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(24, 18);
+            this.lblID.TabIndex = 16;
+            this.lblID.Text = "ID";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(942, 748);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.rchDetail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmdCategory);
@@ -244,6 +266,8 @@ namespace ADO.Net_Project
         private System.Windows.Forms.ComboBox cmdCategory;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RichTextBox rchDetail;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblID;
     }
 }
 
